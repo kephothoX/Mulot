@@ -89,5 +89,5 @@ Edit  `src.server.ts` and set the following variables:
 
 ## House keeping
 
-`cd HouseKeeping` and create a new python env bu running `python -m venv CircleEnv`  activate the env and install packages by running  `pip install -r requirements.txt` then run `python main.py` to get Entity_Secret and Cipher_Text.
+`cd HouseKeeping` and create a new python env by running `python -m venv CircleEnv`  activate the env and install packages by running  `pip install -r requirements.txt` then run `python main.py` to get Entity_Secret and Cipher_Text.
 Also for Wallet Set creation.
