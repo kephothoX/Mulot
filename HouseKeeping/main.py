@@ -15,11 +15,11 @@ from circle.web3 import developer_controlled_wallets
 
 
 CIRCLE_API_KEY = (
-    "TEST_API_KEY:217c20cd139202ffafc71ef13499ab5c:e2fbd29d95b0aa6b77d0bff21cc89db3"
+    ""
 )
 
 
-# ENTITY_SECRET = "56a4e4dbaf0fa3cda635ac941533a248caff4af6c029f111207a5b3ed97e1cfa"
+# ENTITY_SECRET = ""
 
 
 client = utils.init_configurations_client(
