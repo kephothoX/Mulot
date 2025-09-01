@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-content>
+      @if (BalancesResponse()) {
+      <div class="alert alert-info" role="alert">
+        <h4 class="text-info heading-4">Token Balances</h4>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h4 class="fw-bold">Tokens:
+              <span class="text-info">{{ BalancesResponse().WalletTokenBalance }}</span>
+            </h4>
+          </li>
+
+          <li class="list-group-item">
+            <h4 class="fw-bold">NFT Tokens:
+              <span class="text-info">{{ BalancesResponse().WalletNFTBalance }}</span>
+            </h4>
+          </li>
+          <li class="list-group-item">
+            <h4 class="fw-bold">Transactions:
+              <span class="text-info">{{ BalancesResponse().WalletTransactions }}</span>
+            </h4>
+          </li>
+        </ul>
+      </div>
+      } @else {
+      <div class="alert alert-warning" role="alert">
+        <mat-progress-bar color="accent" mode="query">Loading Balances...</mat-progress-bar>
+      </div>
+      }
+
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <mat-progress-bar color="accent" mode="query"></mat-progress-bar>
+  <mat-card class="mat-elevation-z8">
+    <mat-card-content>
+      <mat-divider color="primary"></mat-divider>
+      <form [formGroup]="treasuryForm" class="form">
+        <mat-form-field appearance="fill" class="form-control">
+          <mat-label>Recipient</mat-label>
+          <input type="text" matInput formControlName="recipient" placeholder="Enter Recipient" required>
+          <mat-hint>Recipient Wallet Address</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-control">
+          <mat-label>Chain ID</mat-label>
+          <input type="text" matInput formControlName="chainId" placeholder="Enter Chain ID" required>
+          <mat-hint>Chain ID</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-control">
+          <mat-label>Balance</mat-label>
+          <input type="number" matInput formControlName="balance" placeholder="Enter Balance to Consolidate" required>
+          <mat-hint>Balance Available</mat-hint>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill" class="form-control">
+          <mat-label>Blockchain</mat-label>
+          <mat-select formControlName="chain" required>
+            @for (chain of Chains; track chain) {
+            <mat-option [value]="chain">{{ chain }}</mat-option>
+            }
+          </mat-select>
+          <mat-hint>Select Blockchain</mat-hint>
+        </mat-form-field>
+
+      </form>
+
+      @if (TreasuryAccounts.length > 0) {
+      <div class="alert alert-info" role="alert">
+        <ul class="list-group">
+          @for (account of TreasuryAccounts; track account) {
+          <li class="list-group-item">Address: {{ account.chainId }} - Chain: {{ account.chain }} - Amount: {{
+            account.balance }}</li>
+          }
+        </ul>
+      </div>
+      }
+
+      <mat-card-actions>
+
+        <button matButton="elevated" type="submit" color="primary" (click)="addTreasuryAccount()">
+          <mat-icon class="material-symbols-outlined">add</mat-icon>
+          Add New Consolidation Account
+        </button>
+
+        <button matButton="elevated" type="submit" color="danger" (click)="completeConsolidation()">
+          <mat-icon class="material-symbols-outlined">payments</mat-icon>
+          Complete Consolidation And Send To Recipient
+        </button>
+      </mat-card-actions>
+
+
+
+      <mat-divider color="primary"></mat-divider>
+
+    </mat-card-content>
+  </mat-card>
+</div>

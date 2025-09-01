@@ -1,0 +1,154 @@
+<div class="container-fluid col-lg-4 col-md-10 col-sm-12 mx-auto my-auto p-4">
+  <mat-card class="mat-elevation-z8 p-4">
+    <mat-divider color="primary"></mat-divider>
+
+    <button matFab extended color="accent" (click)="importWalletDialog()" class="m-4">
+      <mat-icon class="material-symbols-outlined">arrow_circle_down</mat-icon>
+      Import Wallet
+    </button>
+    <mat-divider color="primary"></mat-divider>
+
+    <mat-card-content class="p-4">
+
+      @if (CircleWallet()) {
+
+      <div class="alert alert-success" role="alert">
+
+        <summary>
+          <span class="h5">Wallet Address: </span>
+          <span class="h5 fw-bold font-monospace text-decoration-underline">{{ CircleWallet().address }} </span>
+          <details>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="h5">Account Type: </span>
+                <span class="h5 fw-bold font-monospace">{{ CircleWallet().accountType }} </span>
+              </li>
+              <li class="list-group-item">
+                <span class="h5">Circle Wallet ID: </span>
+                <span class="h5 fw-bold font-monospace">{{ CircleWallet().id }} </span>
+              </li>
+              <li class="list-group-item">
+                <span class="h5">Created On: </span>
+                <span class="h5 fw-bold font-monospace">{{ CircleWallet().createDate | date }} </span>
+              </li>
+
+              <li class="list-group-item">
+                <span class="h5">Blockchain: </span>
+                <span class="h5 fw-bold font-monospace">{{ CircleWallet().blockchain }} </span>
+              </li>
+              <li class="list-group-item">
+                <span class="h5">Custody Type: </span>
+                <span class="h5 fw-bold font-monospace">{{ CircleWallet().custodyType }} </span>
+              </li>
+            </ul>
+          </details>
+        </summary>
+      </div>
+      } @else {
+      <mat-progress-bar mode="indeterminate">Loading Circle Wallet...</mat-progress-bar>
+      }
+
+    </mat-card-content>
+    <mat-divider color="primary"></mat-divider>
+    <button matFab extended color="accent" (click)="createWalletDialog()" class="m-4">
+      <mat-icon class="material-symbols-outlined">add_card</mat-icon>
+      Create Wallet
+    </button>
+    <mat-divider color="primary"></mat-divider>
+
+    <mat-divider color="primary"></mat-divider>
+    <button matFab extended color="accent" (click)="recoverWalletDialog()" class="m-4">
+      <mat-icon class="material-symbols-outlined">cloud_download</mat-icon>
+      Recover Wallet
+    </button>
+  </mat-card>
+
+
+
+
+
+
+
+  <!--<mat-card class="mat-elevation-z8">
+    @if (!WalletCreateResponse) {
+    <mat-card-content>
+      <mat-progress-bar mode="indeterminate">Loading ........</mat-progress-bar>
+    </mat-card-content>
+
+    } @else {
+    <mat-card-content>
+      <div class="alert alert-success" role="alert">
+        <p>{{ WalletCreateResponse().id }}</p>
+        <p>{{ WalletCreateResponse().createDate | date }}</p>
+        <p>{{ WalletCreateResponse().pinStatus }}</p>
+      </div>
+
+    </mat-card-content>
+    }
+
+  </mat-card>
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <div class="alert alert-info" role="alert">
+        <h4 class="text-info heading-4">Get Free Coins</h4>
+        <button type="button" matButton="elevated" color="primary" (click)="getMeSomeCoins()">
+          <mat-icon class="material-symbols-outlined">money</mat-icon>
+          Get Free Coins
+        </button>
+      </div>
+    </mat-card-header>
+  </mat-card>
+
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+
+    </mat-card-header>
+
+    <mat-card-content>
+    -->
+  <!-- <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner> -->
+  <!-- </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <div class="alert alert-info" role="alert">
+        <h4 class="text-info heading-4">Balances</h4>
+        <button type="button" matButton="elevated" color="primary" (click)="getBalances()">
+          <mat-icon class="material-symbols-outlined">paid</mat-icon>
+          Get Balances
+        </button>
+      </div>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <div class="alert alert-info" role="alert">
+        <h4 class="text-info heading-4">Find Wallet</h4>
+        <button type="button" matButton="elevated" color="primary" (click)="getWallet()">
+          <mat-icon class="material-symbols-outlined">wallet</mat-icon>
+          Find Wallet
+        </button>
+      </div>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <div class="alert alert-info" role="alert">
+        <h4 class="text-info heading-4">Wallet</h4>
+        <button type="button" matButton="elevated" color="primary" (click)="initUserwallet()">
+          <mat-icon class="material-symbols-outlined">wallet</mat-icon>
+          Init User Wallet
+        </button>
+      </div>
+    </mat-card-header>
+  </mat-card>
+-->
+
+
+
+</div>

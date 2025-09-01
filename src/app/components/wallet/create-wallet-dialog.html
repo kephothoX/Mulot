@@ -1,0 +1,78 @@
+<h2 mat-dialog-title class="fw-bold h2 text-danger">Create Wallet</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-progress-bar color="accent" mode="query"></mat-progress-bar>
+  <mat-card class="mat-elevation-z8">
+    <mat-card-actions>
+      <mat-divider color="primary"></mat-divider>
+      <form [formGroup]="walletCretionForm" (ngSubmit)="createWallet()" class="form">
+        <mat-form-field appearance="fill">
+          <mat-label>Blockchain</mat-label>
+          <mat-select formControlName="blockchain" required>
+            @for (blockchain of Blockchains; track blockchain) {
+            <mat-option [value]="blockchain">{{ blockchain }}</mat-option>
+            }
+          </mat-select>
+          <mat-hint>Select Blockchain</mat-hint>
+        </mat-form-field>
+        <button matButton="elevated" type="submit" color="primary">
+          <mat-icon class="material-symbols-outlined">add</mat-icon>
+          Add New Wallet
+        </button>
+      </form>
+
+      <mat-divider color="primary"></mat-divider>
+
+    </mat-card-actions>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      @if (WalletCreateResponse().Wallet.id !== '') {
+      <div class="alert alert-success" role="alert">
+        <summary>
+          <ul class="list-group">
+            <li class="list-group-item">Wallet Set ID: {{ WalletCreateResponse().Wallet.address }}</li>
+            <li class="list-group-item">Created On: {{ WalletCreateResponse().Wallet.createDate | date }}</li>
+            <li class="list-group-item">User: {{ WalletCreateResponse().User.id}} </li>
+          </ul>
+          <details>
+            <ul class="list-group">
+              <li class="list-group-item">Wallet Address: {{ WalletCreateResponse().Wallet.address }}</li>
+              <li class="list-group-item">User Token: {{ WalletCreateResponse().UserToken }}</li>
+            </ul>
+          </details>
+        </summary>
+        @if (WalletBackupResponse().cid !== '') {
+        <div class="alert alert-info" role="alert">
+          <summary>
+            <p class="h5 text-black fw-bold">IPFS CID: <span class="text-danger">{{ WalletBackupResponse().cid
+                }}</span></p>
+
+            <small class="text-muted text-danger">Please keep IPFS safely for Wallet Recovery.</small>
+            <details>
+              <ul class="list-group">
+                <li class="list-group-item">IPFS CID: {{ WalletBackupResponse().cid }}</li>
+                <li class="list-group-item">IPFS Name: {{ WalletBackupResponse().name }}</li>
+                <li class="list-group-item">IPFS Created At {{ WalletBackupResponse().created_at | date }}</li>
+                <li class="list-group-item">IPFS Updated At {{ WalletBackupResponse().updated_at | date }}</li>
+              </ul>
+            </details>
+          </summary>
+        </div>
+        } @else {
+        <div class="alert alert-warning" role="alert">
+          <mat-progress-bar mode="query">Looking for wallet with IPFS CID</mat-progress-bar>
+        </div>
+        }
+      </div>
+      } @else {
+      <mat-progress-bar mode="query">Loading Response....</mat-progress-bar>
+      }
+
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button matFab extended color="danger" [mat-dialog-close]="true" cdkFocusInitial>
+    <mat-icon class="material-symbols-outlined">close</mat-icon>
+    Close
+  </button>
+</mat-dialog-actions>

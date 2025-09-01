@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-content>
+      <mat-progress-bar color="primary" mode="buffer"></mat-progress-bar>
+      <mat-tab-group animationDuration="3000ms">
+        <!--<mat-tab>
+          <ng-template mat-tab-label color="primary">
+            <mat-icon color="primary" class="material-symbols-outlined fw-bold">login</mat-icon>
+            Login
+          </ng-template>
+          <app-auth></app-auth>
+
+        </mat-tab> -->
+
+        <mat-tab>
+          <ng-template mat-tab-label color="primary">
+            <mat-icon color="primary" class="material-symbols-outlined fw-bold">wallet</mat-icon>
+            Wallet
+          </ng-template>
+          <app-wallet></app-wallet>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon color="primary" class="material-symbols-outlined fw-bold">account_balance_wallet</mat-icon>
+            Balances
+          </ng-template>
+          <app-balances></app-balances>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon color="primary" class="material-symbols-outlined fw-bold">attach_money</mat-icon>
+            Send
+          </ng-template>
+          <app-send></app-send>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon color="primary" class="material-symbols-outlined fw-bold">currency_bitcoin</mat-icon>
+            Treasury
+          </ng-template>
+          <app-treasury></app-treasury>
+        </mat-tab>
+
+
+        <mat-tab>
+          <ng-template mat-tab-label color="primary">
+            <mat-icon color="primary" class="material-symbols-outlined fw-bold">settings</mat-icon>
+            Settings
+          </ng-template>
+          <div class="alert alert-info" role="alert">
+            <h4 class="text-info heading-4">Settings</h4>
+            <p>Settings content goes here.</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+
+</div>

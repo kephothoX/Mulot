@@ -1,0 +1,64 @@
+{
+  "name": "Mulot-Payments",
+  "description": "A web3 payment portal buid with Circle API.",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --configuration development --port 4203",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "serve:ssr:mulot": "node dist/mulot/server/server.mjs"
+  },
+  "type": "module",
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/cdk": "^20.1.5",
+    "@angular/common": "^20.1.0",
+    "@angular/compiler": "^20.1.0",
+    "@angular/core": "^20.1.0",
+    "@angular/forms": "^20.1.0",
+    "@angular/material": "^20.1.5",
+    "@angular/platform-browser": "^20.1.0",
+    "@angular/platform-server": "^20.1.0",
+    "@angular/router": "^20.1.0",
+    "@angular/ssr": "^20.1.5",
+    "@circle-fin/developer-controlled-wallets": "^8.4.0",
+    "@circle-fin/user-controlled-wallets": "^8.4.0",
+    "@circle-fin/w3s-pw-web-sdk": "^1.1.11",
+    "@ng-bootstrap/ng-bootstrap": "^19.0.1",
+    "@stable-io/sdk": "^0.2.2",
+    "express": "^5.1.0",
+    "firebase": "^12.1.0",
+    "ngx-webstorage": "^20.0.0",
+    "pinata": "^2.4.9",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.1.5",
+    "@angular/cli": "^20.1.5",
+    "@angular/compiler-cli": "^20.1.0",
+    "@types/express": "^5.0.1",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.19.10",
+    "jasmine-core": "~5.8.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.8.2"
+  }
+}
